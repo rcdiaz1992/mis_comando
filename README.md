@@ -21,3 +21,11 @@ db.getCollection('impAfrActa').find({
   "log.est.nom": "EN_AFORO",
   "log.est.usu": { $ne: "BPM" }
 });
+
+
+
+backend
+npm run build:lib --deployar librerias
+npm run publish:lib --publicar interfaces en nexus
+npm run start:dev --para ejecutar y cada cambio se reejecute
+npm run update:lib --actualizar dependencias 
