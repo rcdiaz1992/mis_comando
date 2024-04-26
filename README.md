@@ -29,3 +29,25 @@ npm run build:lib --deployar librerias
 npm run publish:lib --publicar interfaces en nexus
 npm run start:dev --para ejecutar y cada cambio se reejecute
 npm run update:lib --actualizar dependencias 
+
+
+--reporte UCOA
+SELECT
+  *
+FROM
+  sin.bitacora_consulta_sin a
+WHERE a.factura_valida = true and a.transaccion=true and 
+  (a.nit_proveedor, a.nro_factura, a.codigo_autorizacion_factura) IN (
+    SELECT
+      b.nit_proveedor,
+      b.nro_factura,
+      b.codigo_autorizacion_factura
+    FROM
+      sin.bitacora_consulta_sin b where b.factura_valida = true and b.transaccion=true
+    GROUP BY
+      b.nit_proveedor,
+      b.nro_factura,
+      b.codigo_autorizacion_factura
+    HAVING
+      COUNT(*) >= 2
+  )
