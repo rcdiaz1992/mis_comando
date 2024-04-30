@@ -51,3 +51,16 @@ WHERE a.factura_valida = true and a.transaccion=true and
     HAVING
       COUNT(*) >= 2
   )
+
+
+   2748  git status
+ 2749  npm uninstall -g @aduana/cli
+ 2750  npm install -g @aduana/cli
+ 2751  sudo npm install -g @aduana/cli
+ 2752  nvm -v
+ 2753  node -v
+ 2754  nvm ls-remote
+ 2755  nvm install 18.20.2
+ 2756  npm list -g
+ 2757  npm install -g @aduana/cli
+ 2758  anest r fisParametricas
